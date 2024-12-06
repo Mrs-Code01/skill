@@ -9,6 +9,14 @@
 </head>
 
 <body>
+  <div class="intro_video_container">
+    <iframe src="https://www.youtube.com/embed/eayKOXKt-Ks?si=FLLzUfuV6grlCCXP" title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="intro_video"></iframe>
+    <p class="intro_video_cancel_btn">+</p>
+  </div>
+
   <nav>
     <h2>Mercy.I</h2>
     <div class="hamburger">
@@ -31,8 +39,7 @@
       <h1>MERCY.<span>I</span></h1>
       <p>Frontend Developer!</p>
       <a href="https://drive.google.com/file/d/18jYO8kAho9uouSY_M-R_pltTwNrlnGLx/view?usp=sharing">CV</a>
-      <a href="https://drive.google.com/file/d/1dCMyQEbHRiotSXeIMHKnx0H9EZ2Pfikf/view?usp=sharing">Intro
-        Video</a>
+      <span id="intro_vid">Intro Video</span>
     </div>
     <div class="right">
       <img src="./images/3d-cartoon-style-character.jpg" alt="">
@@ -107,14 +114,12 @@
   <!---PORTFOLIO--->
   <!---PORTFOLIO--->
   <section id="contact">
-    <h2>CONTACT</h2>
-    <div class="line"></div>
-    <div class="contact-flex">
-      <a href="https://wa.me/+2348125067911">Whatsapp</a>
-      <a href="mailto:midubor13@gmail.com">Send me an email</a>
-      <a href="tel:+2347019108827">Call me</a>
-    </div>
+    <p>
+      You are amazing! Thanks for going through my page.
+    </p>
+    <a href="mailto:midubor13@gmail.com">CONTACT ME</a>
   </section>
+  <hr>
 
   <section class="socials">
     <a href="#"><img src="./images/facebook (4).png" alt="facebook_image"></a>
@@ -129,10 +134,21 @@
   <script>
     const hamburger = document.querySelector('.hamburger');
     const menu = document.querySelector('.menu');
+    const introVid = document.querySelector('#intro_vid');
+    const introVideoContainer = document.querySelector('.intro_video_container');
+    const introVidBtn = document.querySelector('.intro_video_cancel_btn');
 
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       menu.classList.toggle('active');
+    })
+
+    introVid.addEventListener('click', () => {
+      introVideoContainer.classList.add('intro_video_container_show')
+    })
+
+    introVidBtn.addEventListener('click', () => {
+      introVideoContainer.classList.remove('intro_video_container_show')
     })
   </script>
 </body>
